@@ -1,0 +1,9 @@
+replicaCount: 1
+name: log-message-processor
+
+image:
+  repository: log-message-processor
+  pullPolicy: Never
+
+container:
+  name: log-message-processor

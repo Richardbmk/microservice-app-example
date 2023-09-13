@@ -1,0 +1,16 @@
+replicaCount: 1
+name: auth-api
+
+image:
+  repository: auth-api
+  pullPolicy: Never
+
+
+service:
+  name: auth-api
+  type: NodePort
+  port: 8081
+  targetport: 8081
+
+container:
+  name: auth-api
