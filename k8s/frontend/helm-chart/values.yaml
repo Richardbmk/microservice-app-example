@@ -1,0 +1,16 @@
+replicaCount: 1
+name: frontend
+
+image:
+  repository: frontend
+  pullPolicy: Never
+
+
+service:
+  name: frontend
+  type: LoadBalancer
+  port: 8080
+  targetport: 8080
+
+container:
+  name: frontend
