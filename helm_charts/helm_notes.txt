@@ -1,0 +1,4 @@
+$ helm create helm-chart
+$ helm template test ./helm-chart/
+$ helm install auth-api <path od chart>
+$ helm list
