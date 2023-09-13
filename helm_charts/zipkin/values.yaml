@@ -1,0 +1,17 @@
+replicaCount: 1
+name: zipkin
+
+image:
+  repository: openzipkin/zipkin
+  pullPolicy: Never
+
+
+service:
+  name: zipkin
+  type: LoadBalancer
+  port: 9411
+  targetport01: 9411
+  targetport02: 9410
+
+container:
+  name: zipkin

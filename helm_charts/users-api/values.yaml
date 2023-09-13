@@ -1,0 +1,16 @@
+replicaCount: 1
+name: users-api
+
+image:
+  repository: users-api
+  pullPolicy: Never
+
+
+service:
+  name: users-api
+  type: LoadBalancer
+  port: 8083
+  targetport: 8083
+
+container:
+  name: users-api

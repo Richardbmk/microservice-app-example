@@ -1,0 +1,16 @@
+replicaCount: 1
+name: todos-api
+
+image:
+  repository: todos-api
+  pullPolicy: Never
+
+
+service:
+  name: todos-api
+  type: LoadBalancer
+  port: 8082
+  targetport: 8082
+
+container:
+  name: todos-api

@@ -1,0 +1,16 @@
+replicaCount: 1
+name: redis-queue
+
+image:
+  repository: redis
+  pullPolicy: Never
+
+
+service:
+  name: redis-queue
+  type: LoadBalancer
+  port: 6379
+  targetport: 6379
+
+container:
+  name: redis-queue

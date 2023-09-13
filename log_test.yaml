@@ -1,18 +1,26 @@
+---
+# Source: auth-api/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: microservice-app-example
+    helm.sh/chart: auth-api-0.1.0
+    app.kubernetes.io/name: auth-api
+    app.kubernetes.io/instance: test
+    app.kubernetes.io/version: "1.16.0"
+    app.kubernetes.io/managed-by: Helm
   name: log-message-processor
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: microservice-app-example
+      app.kubernetes.io/name: auth-api
+      app.kubernetes.io/instance: test
   template:
     metadata:
       labels:
-        app: microservice-app-example
+        app.kubernetes.io/name: auth-api
+        app.kubernetes.io/instance: test
         service: log-message-processor
     spec:
       containers:
@@ -24,9 +32,7 @@ spec:
         - name: REDIS_CHANNEL
           value: log_channel
         - name: ZIPKIN_URL
-          value: http://zipkin:9411/api/v1/spans
-          
+          value: http://zipkin:9411/api/v1/spans         
         image: log-message-processor
         name: log-message-processor
-        imagePullPolicy: Never
       restartPolicy: Always
